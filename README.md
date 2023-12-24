@@ -10,6 +10,12 @@ Welcome to the Student GPA Calculator! This project helps students calculate the
 - [Contributing](#contributing)
 - [License](#license)
 
+## Demo
+
+Here's a quick demo of the application:
+
+![Demo](./images/a1.png)
+
 ## Features
 
 - **GPA Calculation:** Easily calculate your GPA for a semester or academic year.
@@ -26,9 +32,9 @@ To get a local copy up and running, follow these simple steps:
 
 ## Usage
 - Go to the 'Calculate GPA.
-- Enter your course details and grades. including: total exam score in the 'Total Mark' column actual course unit in the 'Course Unit' column (e.g. 'COM314' 86 unit 4) Continue entering all courses and units.
+- Enter your course details and grades, including: the total exam score in the 'Total Mark' column actual course unit in the 'Course Unit' column (e.g., 'COM314' 86 unit 4) Continue entering all courses and units.
 - If you reach the maximum number of rows, click the 'Add' button to add another row.
--  Once all courses are entered, click 'Compute GPA'.
+- Once all courses are entered, click 'Compute GPA'.
 - Enter your name and click 'Show result' to see your GPA, class, and other details.
 
 ## Contributing
