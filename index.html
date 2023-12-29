@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/gp.css">
+    <title>Student GP Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <h1><span>ABDU GUSAU POLYTECHNIC</span><br> Student GP Calculator</h1>
+        <img src="logo.png" alt="">
+        <div class="img2"><img src="logo2.png" alt=""></div>
+        <table id="gradeTable">
+            <thead>
+                <tr class="head">
+                    <th>Total course Marks</th>
+                    <th>Course Unit</th>
+                </tr>
+            </thead>
+            <!-- Table rows with input fields for entering marks and units -->
+<tbody id="gradeTableBody">
+    
+    <tr>
+        <td><input type="number" name="totalMarks[]" placeholder="Enter Total Mark"/></td>
+        <td><input type="number" name="courseUnit[]" placeholder="Enter Course Unit"/></td>
+    </tr>
+    
+    <tr>
+        <td><input type="number" name="totalMarks[]" placeholder="Enter Total Mark"/></td>
+        <td><input type="number" name="courseUnit[]" placeholder="Enter Course Unit"/></td>
+    </tr>
+  
+    <tr>
+        <td><input type="number" name="totalMarks[]" placeholder="Enter Total Mark"/></td>
+        <td><input type="number" name="courseUnit[]" placeholder="Enter Course Unit"/></td>
+    </tr>
+ 
+    <tr>
+        <td><input type="number" name="totalMarks[]" placeholder="Enter Total Mark"/></td>
+        <td><input type="number" name="courseUnit[]" placeholder="Enter Course Unit"/></td>
+    </tr>
+   
+    <tr>
+        <td><input type="number" name="totalMarks[]" placeholder="Enter Total Mark"/></td>
+        <td><input type="number" name="courseUnit[]" placeholder="Enter Course Unit"/></td>
+    </tr>
+</tbody>
+
+            <tbody>
+                <!-- Table rows with input fields for entering marks and units -->
+                <tr>
+                    <td><button class="increase" onclick="addRow()" >Add +</button></td>
+                    <td><button id="resetButton" class="increase">Reset</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="buttons">
+            <button id="computeButton">Compute GP</button>
+            <button id="clearButton">Clear</button>
+            <!--<button id="saveGPButton">Save GP</button>-->
+        </div>
+        <div class="buttons">
+            <p></p>
+            <button onclick="DisplayApp()">About App</button>
+            <button onclick="DisplayContainer()">Developer</button>
+        </div>
+        <!-- Hidden input fields and "Calculate GP" button -->
+        
+    <div id="inputFields" style="display: none;" class="hidden">
+            <input type="text" id="studentName" placeholder="Enter Your Name">
+            <button id="calculateButton">Show result</button>
+         </div>
+        <div class="results">
+            <!-- Display results here using JavaScript -->
+        </div>
+        <div class="buttons">
+            <!-- Hidden "Save GP Results" section -->
+            <div id="saveGPSection" style="display: none;">
+                
+                <!-- Container for saved GP results -->
+                <div class="saved-gp-container">
+                    <h2>Saved GP Results</h2>
+                    <ul id="savedGPList">
+                        <!-- Saved GP results will be dynamically added here -->
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Add a hidden div for the pop-up -->
+    <div id="resultPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>GP Calculation Result</h2>
+            <p><!--Name:--><span id="displayedName"></span></p>
+            <p><!--Total GP:--><span id="displayedGP"></span></p>
+            <p><!--Class:--><span id="displayedClass"></span></p>
+            <p><!--Total Course Grade Point:--><span id="displayedTotalGradePoint"></span></p>
+            <p><!--Total Course Unit:--><span id="displayedTotalUnit"></span></p>
+            <p><!--Total Number Of Courses:--><span id="displayedTotalCourses"></span></p>
+            <!--<button id="saveResultButton">Save</button>-->
+        </div>
+    </div>
+    <script src="./js/gp.js"></script>
+    <script>
+        // Get the table body element
+        var tbody = document.getElementById("gradeTableBody");
+    
+        // Add row
+        function addRow() {
+            // Get the last row
+            var lastRow = tbody.lastElementChild;
+    
+            // Clone the last row
+            var clone = lastRow.cloneNode(true);
+    
+            // Clear input values in the cloned row
+            clone.querySelectorAll('input').forEach(input => input.value = "");
+    
+            // Add the cloned row to the table
+            tbody.appendChild(clone);
+        }
+    
+        // Function to reset the app
+        document.getElementById("resetButton").addEventListener("click", function () {
+            // Clear input fields and results
+            const totalMarksInputs = document.querySelectorAll('input[name="totalMarks[]"]');
+            const courseUnitInputs = document.querySelectorAll('input[name="courseUnit[]"]');
+            totalMarksInputs.forEach(input => (input.value = ""));
+            courseUnitInputs.forEach(input => (input.value = ""));
+            document.getElementById("inputFields").style.display = "none";
+    
+            // Reset global variables
+            totalGradePoints = 0;
+            totalCourseUnits = 0;
+            totalNumberOfCourses = 0;
+    
+            // Hide the results popup
+            document.getElementById("resultPopup").style.display = "none";
+        });
+    
+        function DisplayContainer() {
+            alert("Developed By: Abdullahi Badamasi Ambato \n ambatoprodigitalpix@gmail.com \n\n Special thanks to the critical thinker team (CTT) for their outstanding cooperation during the building process. \n We dedicate this app to the NACOSS National Executive Council 2022/2023.");
+        }
+    
+       function DisplayApp() {
+  alert("This GPA calculator app was developed by the computer science department under the guidance of: \n M. Aminu A Suleiman (Head of Computer Science Department)\n M. Musa Abubakar \n\n How the app works: \n 1. Go to the 'Calculate GPA' section \n 2. Enter your course details, including: total exam score in the 'Total Mark' column actual course unit in the 'Course Unit' column (e.g. 'COM314' 86 unit 4) Continue entering all courses and units. \n 3. If you reach the maximum number of rows, click the 'Add' button to add another row.\n 4. Once all courses are entered, click 'Compute GPA'. \n 5. Enter your name and click 'Show result' to see your GPA, class, and other details.");
+}
+    </script>
+    
+</body>
+</html>

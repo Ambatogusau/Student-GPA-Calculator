@@ -1,0 +1,343 @@
+/* Your CSS styles here */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+    font-family: Arial, sans-serif;
+   
+    background-color:  rgb(33, 255, 33);
+}
+
+.container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    box-shadow: -5px -5px 15px rgba(255,255,255,0.1), 5px 5px 15px rgba(0,0,0,0.35),
+    inset -5px -5px rgba(255,255,255,0.1), 
+    inset 5px 5px 15px rgba(0,0,0,0.35);
+    overflow: hidden;
+    border-radius: 20px;
+    min-height: 100vh;
+   
+}
+.container img{
+    display: flex;
+    position: absolute;
+    width: 76px;
+    left: 38px;
+    top: 38px;
+    padding: 7px; 
+    justify-content: space-between;
+    
+}
+.container .img2 img{
+    display: flex;
+    position: absolute;
+    width: 50px;
+    left: 400px;
+    top: 50px;
+    
+   
+}
+.container h1{
+    color:darkgreen;
+    font-size: 20px; 
+    padding: 11px; 
+}
+.container .head {
+    color: #000000;
+    font-size: 13px;
+   
+   
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    
+}
+
+
+th, td {
+    padding: 8px;
+    border: 1px solid rgb(33, 255, 33);
+    
+
+}
+.container table input{
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding: 10px;
+    color: rgb(8, 73, 2);
+    background-color: white;
+    border: 1px solid rgb(33, 255, 33);
+    font-size: 20px;
+    outline: none;
+    box-shadow: -5px -5px 15px rgba(255,255,255,0.1),
+    5px 5px 15px rgba(0,0,0,0.35);
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    font-weight: bold;
+    
+}
+.container table input::placeholder{
+    color: #000000;
+    font-size: 15px;
+    font-family: sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-weight: lighter;
+    
+    
+}
+.buttons {
+    margin-top: 10px;
+}
+.buttons button{
+    width: 100px;
+    background: rgb(33, 255, 33);
+        color: #223243;
+        padding: 10px 0;
+        font-weight: bolder;
+        cursor: pointer;
+        box-shadow: -5px -5px 15px rgba(255,255,255,0.1), 5px 5px 15px rgba(0,0,0,0.35)
+        inset -5px -5px rgba(255,255,255,0.1), 
+        inset 5px 5px 15px rgba(0,0,0,0.35);
+        border-radius: 30px;
+}
+.buttons button:hover{
+     background: white
+}
+.container .hidden input{
+    width: 200px;
+    padding: 5px;
+    margin: 10px;
+    border-style: none;
+    font-size: 20px;
+    outline: none;
+    border-radius: 25px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: -5px -5px 15px rgba(255,255,255,0.1),
+    5px 5px 15px rgba(0,0,0,0.35);
+}   
+.results {
+    margin-top: 20px;
+}
+.container .hidden button{
+    width: 100px;
+    background: rgb(33, 255, 33);
+        color: #223243;
+        padding: 10px 0;
+        font-weight: bolder;
+        cursor: pointer;
+        box-shadow: -5px -5px 15px rgba(255,255,255,0.1), 5px 5px 15px rgba(0,0,0,0.35)
+        inset -5px -5px rgba(255,255,255,0.1), 
+        inset 5px 5px 15px rgba(0,0,0,0.35);
+        border-radius: 30px;
+}
+
+/* Style for the pop-up */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+.popup-content h2{
+    color: rgb(33, 255, 33);
+}
+.popup-content p{
+ color: rgb(255, 208, 0);
+ margin-left: 10px;
+ display: flex;
+ position: relative;
+ padding: 3px;
+}
+/* Style for the close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+    width: 9%;
+}
+.saved-gp-container{
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #282E6842;
+  top: 50%;
+  border: 2px solid lime;
+  
+}
+.saved-gp-container h2{
+  position: absolute;
+  bottom: 350px;
+  color: red;
+}
+ .increase{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 13px;
+    left: 20%;
+    background-color:#ff2000;
+    border-radius: 5px;
+    padding: 6px;
+     border: none;
+     font-weight: bolder;  
+}
+.increases{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 13px;
+    left: 3%;
+    background-color:#ff2000;
+    border-radius: 5px;
+    padding: 6px;
+     border: none;
+     font-weight: bolder;  
+}
+.reset {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        width: 150%;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        font-size: 13px;
+        left: -95%;
+        top: 51x;
+        background-color:#037043;
+        border-radius: 5px;
+        padding: 6px;
+        border: none;
+        font-weight: bolder;  
+}
+.increase:hover{
+    background-color: rgb(0, 0, 0);
+    justify-content: space-between;
+    
+}
+
+@media(max-width: 600px)  {
+    .container{
+        grid-template-columns: 0 auto 5rem;
+        gap: 0;
+    }
+    
+    .container h1{
+        font-size: 18px;
+    }
+    .container h1 span{
+        font-size: 17px;
+        font-weight: bolder;
+        color: #ff2000;
+        text-shadow: 5px 5px 15px rgba(255, 254, 254, 0.938),
+        5px 5px 15px rgba(255, 255, 255, 0.877);
+        font-family: sans-serif;
+        
+    }
+    .body{
+        background-size: cover;
+    }
+    .popup-content{
+        width: 100%;
+        height: 40%;
+        z-index: 1111;
+    }
+    .increase{
+        width: 60%;
+        text-align: center;
+        justify-content: center;
+    }
+    .increases{
+        width: 60%;
+        text-align: center;
+        justify-content: center;
+    }
+    .container{
+        width: 100%;
+    }
+    .container img{
+        left: 10px;
+    }
+    .container .img2 img{
+        display: flex;
+        width: 50px;
+       left: 290px;
+        top: 50px;
+        
+       
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1023px) {
+    .container{
+        width: 100%;
+    }
+    .body{
+        background-size: cover;
+    }
+    .container .img2 img{
+        display: flex;
+        position: absolute;
+        width: 50px;
+        left: 400px;
+        top: 50px;
+       
+    }
+    .container h1 span{
+        font-size: 20px;
+        font-weight: bolder;
+        color: #ff2000;
+        text-shadow: 5px 5px 15px rgba(255, 254, 254, 0.938),
+        5px 5px 15px rgba(255, 255, 255, 0.877);
+        font-family: sans-serif;
+        
+    }
+    .increase{
+        width: 60%;
+        text-align: center;
+        justify-content: center;
+    }
+}
